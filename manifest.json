@@ -1,0 +1,19 @@
+{
+  "id": "63449fde-a960-42d5-9e80-ae19dc1902cd",
+  "version": "1.0.0",
+  "platform": "all",
+  "arch": "all",
+  "name": "EasyRepetition",
+  "logo": "/logo.png",
+  "keywords": ["Anki", "anki", "Fish", "fish"],
+  "devTools": true,
+  "preview": {
+    "jpg,png": {
+      "inspector": {
+        "path": "index.html",
+        "height": 100,
+        "multiSelect": false
+      }
+    }
+  }
+}
