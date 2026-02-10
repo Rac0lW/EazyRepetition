@@ -3,34 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Inspector Plugin Example</title>
-        <style>
-            html {
-                font-size: 11px;
-                font-family: sans-serif;
-                border-radius: 6px;
-                overflow: hidden;
-            }
-
-            body {
-                padding: 0;
-                margin: 0;
-                color: transparent;
-            }
-
-            /* colors for different themes */
-
-            body[theme="LIGHT"],
-            body[theme="LIGHTGRAY"] {
-                color: black;
-            }
-
-            body[theme="GRAY"],
-            body[theme="BLUE"],
-            body[theme="PURPLE"],
-            body[theme="DARK"] {
-                color: white;
-            }
-        </style>
+        <link rel="stylesheet" href="styles/common.css" />
         <script type="text/javascript" src="plugin.js"></script>
     </head>
 
@@ -52,92 +25,6 @@
 
         <script src="./main.js"></script>
 
-        <style>
-            /* 默认先按暗色，避免在 Dark 里闪白 */
-            body {
-                margin: 0;
-                padding: 10px;
-                font:
-                    12px/1.4 -apple-system,
-                    BlinkMacSystemFont,
-                    "Segoe UI",
-                    Roboto,
-                    Helvetica,
-                    Arial;
-                background: #1f1f1f;
-                color: rgba(255, 255, 255, 0.88);
-            }
-
-            /* 主题变量 */
-            body {
-                --bg: #1f1f1f;
-                --panel: #262626;
-                --text: rgba(255, 255, 255, 0.88);
-                --border: rgba(255, 255, 255, 0.12);
-
-                --btn-bg: rgba(255, 255, 255, 0.08);
-                --btn-bg-hover: rgba(255, 255, 255, 0.12);
-                --btn-bg-active: rgba(255, 255, 255, 0.16);
-                --focus: rgba(255, 255, 255, 0.22);
-
-                --radius: 8px;
-            }
-
-            body[theme="LIGHT"],
-            body[theme="LIGHTGRAY"] {
-                --bg: #ffffff;
-                --panel: #f6f6f6;
-                --text: rgba(0, 0, 0, 0.88);
-                --border: rgba(0, 0, 0, 0.12);
-
-                --btn-bg: rgba(0, 0, 0, 0.06);
-                --btn-bg-hover: rgba(0, 0, 0, 0.1);
-                --btn-bg-active: rgba(0, 0, 0, 0.14);
-                --focus: rgba(0, 0, 0, 0.2);
-            }
-
-            /* 应用变量 */
-            body {
-                background: var(--bg);
-                color: var(--text);
-            }
-
-            /*.wrap {
-                background: var(--panel);
-                border: 1px solid var(--border);
-                border-radius: var(--radius);
-                padding: 10px;
-            }*/
-
-            .title {
-                font-weight: 600;
-                margin-bottom: 8px;
-                user-select: none;
-            }
-
-            .btn {
-                appearance: none;
-                border: 1px solid var(--border);
-                background: var(--btn-bg);
-                color: var(--text);
-                border-radius: var(--radius);
-                padding: 6px 10px;
-                cursor: pointer;
-                transition:
-                    background 0.12s ease,
-                    transform 0.02s ease;
-            }
-            .btn:hover {
-                background: var(--btn-bg-hover);
-            }
-            .btn:active {
-                background: var(--btn-bg-active);
-                transform: translateY(1px);
-            }
-            .btn:focus {
-                outline: none;
-                box-shadow: 0 0 0 2px var(--focus);
-            }
-        </style>
+        <link rel="stylesheet" href="styles/eagle_like.css" />
     </body>
 </html>
