@@ -5,7 +5,29 @@ eagle.onPluginCreate(async () => {
       "\n" + JSON.stringify(msg, null, 2);
   }
 
-  document.getElementById("btn").addEventListener("click", async () => {
+  const btn = document.getElementById("btn");
+
+  async function updateButtonState() {
+    const selected = await eagle.item.getSelected();
+    if (selected.length === 0) return;
+    const item = selected[0];
+
+    if (item.tags.includes("Learned")) {
+      btn.innerText = "Learned";
+      btn.disabled = true;
+    } else if (item.tags.includes("Learning")) {
+      btn.innerText = "Learned";
+      btn.disabled = false;
+    } else {
+      btn.innerText = "Learning";
+      btn.disabled = false;
+    }
+  }
+
+  // Check state on startup
+  await updateButtonState();
+
+  btn.addEventListener("click", async () => {
     let selected = await eagle.item.getSelected();
     let i = selected[0];
 
@@ -23,19 +45,10 @@ eagle.onPluginCreate(async () => {
     }
 
     await i.save();
+    await updateButtonState();
   });
-
-  // document
-  //     .getElementById("learned")
-  //     .addEventListener("click", async () => {
-  //         let selected = await eagle.item.getSelected();
-  //         let i = selected[0];
-  //         const tags = await eagle.tag.get();
-  //         const tag = tags.find((t) => t === "Learning");
-  //         tag.name = "Learned";
-  //         await tag.save();
-  //     });
 });
+
 function setTheme(theme) {
   // 有些版本返回 "DARK"/"LIGHT"，有些可能是 "dark"/"light"
   document.body.setAttribute("theme", String(theme || "").toUpperCase());
