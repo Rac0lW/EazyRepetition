@@ -5,12 +5,26 @@ eagle.onPluginCreate(async () => {
       "\n" + JSON.stringify(msg, null, 2);
   }
 
+  document.getElementById("btn").on;
+
   document.getElementById("btn").addEventListener("click", async () => {
     let selected = await eagle.item.getSelected();
     let i = selected[0];
-    if (!i.tags.includes("Learning")) {
+
+    if (i.tags.includes("Learned")) {
+      return;
+    }
+
+    // 找到 Learning 的索引
+    const learningIndex = i.tags.indexOf("Learning");
+
+    if (learningIndex !== -1) {
+      i.tags.splice(learningIndex, 1);
+      i.tags.push("Learned");
+    } else {
       i.tags.push("Learning");
     }
+
     await i.save();
   });
 
