@@ -5,8 +5,6 @@ eagle.onPluginCreate(async () => {
       "\n" + JSON.stringify(msg, null, 2);
   }
 
-  document.getElementById("btn").on;
-
   document.getElementById("btn").addEventListener("click", async () => {
     let selected = await eagle.item.getSelected();
     let i = selected[0];
@@ -15,7 +13,6 @@ eagle.onPluginCreate(async () => {
       return;
     }
 
-    // 找到 Learning 的索引
     const learningIndex = i.tags.indexOf("Learning");
 
     if (learningIndex !== -1) {
