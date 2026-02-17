@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <title>Inspector Plugin Example</title>
-        <link rel="stylesheet" href="styles/common.css" />
-        <script type="text/javascript" src="plugin.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
     </head>
 
     <body>
@@ -15,13 +17,21 @@
 
         <div class="wrap">
             <!--<div class="title">Inspector Plugin Example RW1</div>-->
-            <button class="btn" id="btn">Learning</button>
+            <button
+                class="w-full h-8 rounded text-sm font-medium flex items-center justify-center transition-colors duration-200 focus:outline-none bg-gray-700 hover:bg-gray-600 text-gray-200"
+                id="btn"
+            >
+                <svg
+                    class="w-3.5 h-3.5 mr-2 fill-current opacity-75"
+                    viewBox="0 0 20 20"
+                >
+                    <path
+                        d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"
+                    />
+                </svg>
+                Learning
+            </button>
         </div>
-        <!--
-        <div class="wrap">
-            <!--<div class="title">Inspector Plugin Example RW1</div>-->
-        <!--<button class="btn" id="learned">Learned</button>
-        </div>-->
 
         <script src="./main.js"></script>
 
